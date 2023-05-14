@@ -121,5 +121,7 @@ services:
       <<: *app_env
       RAILS_ENV: development
 
+    env_file: dev.env
+
     profiles:
       - development
