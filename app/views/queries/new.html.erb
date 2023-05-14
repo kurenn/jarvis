@@ -1,0 +1,13 @@
+<div>
+  <h1>New query</h1>
+</div>
+<div>
+  <%= form_with(model: @query) do |f| %>
+    <div>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.submit "Run" %>
+    </div>
+  <% end %>
+</div>
