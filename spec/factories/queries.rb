@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :query do
-    content { "MyString" }
+    content { 'MyString' }
   end
 end

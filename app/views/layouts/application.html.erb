@@ -7,10 +7,14 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <main class="container mx-auto mt-28 px-5">
+    <main>
       <%= yield %>
     </main>
   </body>

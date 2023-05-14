@@ -6,10 +6,13 @@ class QueriesController < ApplicationController
   def create
     @query = Query.new(query_params)
 
-    if @query.save
-      redirect_to @query, notice: 'Query was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @query.save
+        format.turbo_stream
+        format.html { redirect_to @query, notice: 'Query was successfully created.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
