@@ -1,0 +1,12 @@
+### PostgreSQL tables, with their properties:
+#
+# buyers(id, name, sex, created_at)
+# categories(id, name)
+# orders(id, buyer_id, total, created_at)
+# products(id, name, price, category_id)
+# shipments(id, order_id, product_id)
+#
+### Please follow the next instructions:
+# 1. Add an alias for each column name prefixing it with the table's name
+# 2. When displaying the category_id use the category name instead
+#

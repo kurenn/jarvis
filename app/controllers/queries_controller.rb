@@ -8,6 +8,9 @@ class QueriesController < ApplicationController
 
     respond_to do |format|
       if @query.save
+        @query.result.run
+        @query.update_column(:sql, @query.result.sql)
+
         format.turbo_stream
         format.html { redirect_to @query, notice: 'Query was successfully created.' }
       else
