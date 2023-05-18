@@ -6,7 +6,10 @@
 # products(id, name, price, category_id)
 # shipments(id, order_id, product_id)
 #
-### Please follow the next instructions:
+### Follow the next instructions:
 # 1. Add an alias for each column name prefixing it with the table's name
 # 2. When displaying the category_id use the category name instead
+# 3. When a date string is present, please cast them to database safe dates
+# 4. While casting a date, if no year is provided, use the current year
+# 5. When a string date does not include a year, append the current year to the date, and return that date
 #
