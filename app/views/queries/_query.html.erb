@@ -1,18 +1,28 @@
-<table class='min-w-full divide-y divide-gray-300'>
-  <thead>
-    <tr>
-      <% query.result.fields.each do |field| %>
-        <th scope='col' class='whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0'><%= field.humanize %></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody class='divide-y divide-gray-200 bg-white'>
-    <% query.result.entries.each do |entry| %>
-      <tr>
-        <% query.result.fields.each do |field| %>
-          <td class='whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0'><%= entry[field] %></td>
+<div class='grid grid-cols-3 gap-8'>
+  <div>
+    <p class='text-gray-500 font-bold'>SQL Query:</p>
+    <pre>
+      <code data-controller='highlight' class='language-sql'><%= @query.sql %></code>
+    </pre>
+  </div>
+  <div class='col-span-2'>
+    <table class='min-w-full divide-y divide-gray-300'>
+      <thead>
+        <tr>
+          <% query.result.fields.each do |field| %>
+            <th scope='col' class='whitespace-nowrap py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0'><%= field.humanize %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody class='divide-y divide-gray-200 bg-white'>
+        <% query.result.entries.each do |entry| %>
+          <tr>
+            <% query.result.fields.each do |field| %>
+              <td class='whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0'><%= entry[field] %></td>
+            <% end %>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
